@@ -1,4 +1,12 @@
-include layout.jade
+extends layout.jade
 
 block content
-  h1 This is content
+  .grid
+    each post in posts
+      .block.post
+        .image
+          img(src!=post.image)
+        .info
+          .title!= post.title
+          .user
+            .name!= post.user.name

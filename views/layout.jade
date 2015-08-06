@@ -3,8 +3,17 @@ html
   head
     title archives
     meta(charset='utf8')
+
+    link(rel='stylesheet', type='text/css', href='cdn/css/layout.min.css')
     block css
 
   body
-    block content
+    .header
+      h1 archives
+
+    .content
+      block content
+
+    script(src='cdn/js/plugins.min.js')
+    script(src='cdn/js/layout.min.js')
     block js
