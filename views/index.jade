@@ -7,6 +7,13 @@ block content
         .image
           img(src!=post.image)
         .info
-          .title!= post.title
-          .user
-            .name!= post.user.name
+          .time
+            .icon
+                span.oi(data-glyph='clock')
+            p!= post.time
+
+          if post.nsfw
+            .nsfw
+              .icon
+                span.oi(data-glyph='shield')
+              p nsfw

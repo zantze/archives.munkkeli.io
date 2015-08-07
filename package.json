@@ -14,6 +14,7 @@
     "gulp-uglify": "^1.2.0",
     "jade": "~1.11.0",
     "minigrid": "~1.5.0",
+    "moment": "^2.10.6",
     "mongoose": "~4.1.1",
     "request": "~2.60.0",
     "shortid": "~2.2.2"

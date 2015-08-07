@@ -8,7 +8,9 @@ var concat = require('gulp-concat');
 var paths = {
 	less: ['./assets/less/*.less'],
 	js: ['./assets/js/*.js', '!./assets/js/*.min.js'],
-	jsMin: ['./assets/js/*.min.js']
+	jsMin: ['./assets/js/*.min.js'],
+	css: ['./assets/css/*.css'],
+	fonts: ['./assets/fonts/*.*']
 };
 
 gulp.task('less', function() {
@@ -36,9 +38,20 @@ gulp.task('jsMin', function() {
     .pipe(gulp.dest('./cdn/js'));
 });
 
+gulp.task('css', function() {
+  return gulp.src(paths.css)
+  	.pipe(concat('plugins.min.css'))
+    .pipe(gulp.dest('./cdn/css'));
+});
+
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest('./cdn/fonts'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.less, ['less']);
   gulp.watch(paths.js, ['js']);
 });
 
-gulp.task('default', ['less', 'js', 'jsMin']);
+gulp.task('default', ['less', 'js', 'jsMin', 'css', 'fonts']);
